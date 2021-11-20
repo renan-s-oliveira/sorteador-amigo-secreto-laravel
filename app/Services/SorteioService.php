@@ -8,8 +8,9 @@ use Illuminate\Support\Facades\Mail;
 
 class SorteioService
 {
-    public function sortear($membroSorteio)
+    public function sortear()
     {
+        $membroSorteio = MembroSorteio::all();
         $listaSorteado = [];
         foreach ($membroSorteio as $membro) {
             while ($membro == $membroSorteioRandom = MembroSorteio::inRandomOrder()->first() or in_array($membroSorteioRandom->email, $listaSorteado)) {
