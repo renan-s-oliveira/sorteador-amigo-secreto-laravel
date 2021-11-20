@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MembroSorteioController;
+use App\Http\Controllers\MembroSorteadoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('/listar/membros', [MembroSorteioController::class, 'index'])->name('listar.membros');
 Route::get('/adicionar/membros', [MembroSorteioController::class, 'create'])->name('adicionar.membros');
 Route::post('/adicionar/membros', [MembroSorteioController::class, 'store'])->name('armazenar.membros');
+
+Route::get('/sortear/amigo', [MembroSorteadoController::class, 'membroSorteado'])->name('sortear.membros');
