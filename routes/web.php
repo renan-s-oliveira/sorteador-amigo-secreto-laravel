@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MembroSorteioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,7 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('/listar/membros', [MembroSorteioController::class, 'index'])->name('listar.membros');
+Route::get('/adicionar/membros', [MembroSorteioController::class, 'create'])->name('adicionar.membros');
+Route::post('/adicionar/membros', [MembroSorteioController::class, 'store'])->name('armazenar.membros');
