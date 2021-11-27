@@ -19,7 +19,7 @@ class AddNovosCamposToMembroSorteiosTable extends Migration
             $table->string('complemento')->nullable();
             $table->string('bairro')->nullable();
             $table->string('cidade')->nullable();
-            $table->string('cep ')->nullable();
+            $table->string('cep')->nullable();
         });
     }
 
