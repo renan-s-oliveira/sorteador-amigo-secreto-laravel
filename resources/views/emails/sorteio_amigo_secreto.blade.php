@@ -13,7 +13,13 @@
 
 <div class="jumbotron text-center">
   <h1>Amigo Secreto: {{ $amigo }}</h1>
+  <p>Email: {{ $email }}</p> 
   <p>Sugestão de Presente: {{ $sugestao_presente }}</p> 
+  <p>Endereço: {{ $endereco }}</p> 
+  <p>Bairro: {{ $bairro }}</p> 
+  <p>Complemento: {{ $complemento }}</p> 
+  <p>Cidade: {{ $cidade }}</p> 
+  <p>Cep: {{ $cep }}</p> 
 </div>
 
 </body>

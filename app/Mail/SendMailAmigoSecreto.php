@@ -32,8 +32,14 @@ class SendMailAmigoSecreto extends Mailable
     {
         return $this->subject('Sorteio Amigo Secreto')->view('emails.sorteio_amigo_secreto')
         ->with([
-            'amigo' => $this->sorteio['amigo'],
-            'sugestao_presente' => $this->sorteio['sugestao_presente'],
+            'amigo' => $this->sorteio['amigo']->nome,
+            'sugestao_presente' => $this->sorteio['amigo']->sugestao_presente,
+            'email' => $this->sorteio['amigo']->email,
+            'endereco' => $this->sorteio['amigo']->endereco,
+            'complemento' => $this->sorteio['amigo']->complemento,
+            'bairro' => $this->sorteio['amigo']->bairro,
+            'cidade' => $this->sorteio['amigo']->cidade,
+            'cep' => $this->sorteio['amigo']->cep,
         ]);
     }
 }

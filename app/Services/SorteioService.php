@@ -17,7 +17,7 @@ class SorteioService
                 $membroSorteioRandom = MembroSorteio::inRandomOrder()->first();
             }
             $listaSorteado[] = $membroSorteioRandom->email;
-            Mail::to($membro->email)->send(new SendMailAmigoSecreto(['amigo' => $membroSorteioRandom->nome, 'sugestao_presente' => $membroSorteioRandom->sugestao_presente]));
+            Mail::to($membro->email)->send(new SendMailAmigoSecreto(['amigo' => $membroSorteioRandom]));
         }
 
         return $listaSorteado;

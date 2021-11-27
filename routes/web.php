@@ -16,7 +16,7 @@ use App\Http\Controllers\MembroSorteadoController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('amigo_secreto.home');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -28,3 +28,7 @@ Route::get('/adicionar/membros', [MembroSorteioController::class, 'create'])->na
 Route::post('/adicionar/membros', [MembroSorteioController::class, 'store'])->name('armazenar.membros');
 
 Route::get('/sortear/amigo', [MembroSorteadoController::class, 'membroSorteado'])->name('sortear.membros');
+
+Route::get('/template', function () {
+    return view('layouts.sorteio_layout');
+});

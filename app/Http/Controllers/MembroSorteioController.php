@@ -14,7 +14,7 @@ class MembroSorteioController extends Controller
     {
         $membroSorteios = MembroSorteio::all();
 
-        return view('membro_sorteio.index', ['membros_sorteio' => $membroSorteios]);
+        return view('amigo_secreto.listar_membros', ['membros_sorteio' => $membroSorteios]);
     }
 
     /**
@@ -22,7 +22,7 @@ class MembroSorteioController extends Controller
      */
     public function create()
     {
-        return view('membro_sorteio.create');
+        return view('amigo_secreto.adicionar_membros');
     }
 
     /**
