@@ -13,5 +13,11 @@ class MembroSorteio extends Model
         'nome',
         'email',
         'sugestao_presente',
+        'endereco',
+        'numero',
+        'complemento',
+        'bairro',
+        'cidade',
+        'cep',
     ];
 }
