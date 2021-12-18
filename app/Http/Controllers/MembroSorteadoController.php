@@ -19,6 +19,6 @@ class MembroSorteadoController extends Controller
 
         $listaSorteado = $this->sorteioService->sortear();
 
-        return dd($listaSorteado);
+        dd($listaSorteado);
     }
 }

@@ -19,7 +19,7 @@ class AddNovosCamposToMembroSorteiosTable extends Migration
             $table->string('complemento')->nullable();
             $table->string('bairro')->nullable();
             $table->string('cidade')->nullable();
-            $table->string('cep ')->nullable();
+            $table->string('cep')->nullable();
         });
     }
 
@@ -31,7 +31,7 @@ class AddNovosCamposToMembroSorteiosTable extends Migration
     public function down()
     {
         Schema::table('membro_sorteios', function (Blueprint $table) {
-            //
+            $table->dropColumn('endereco', 'numero', 'complemento', 'bairro', 'cidade', 'cep');
         });
     }
 }
