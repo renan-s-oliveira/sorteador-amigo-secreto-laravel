@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SorteioController;
 use App\Http\Controllers\MembroSorteioController;
 use App\Http\Controllers\MembroSorteadoController;
 
@@ -31,4 +32,12 @@ Route::get('/sortear/amigo', [MembroSorteadoController::class, 'membroSorteado']
 
 Route::get('/template', function () {
     return view('layouts.sorteio_layout');
+});
+
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get('/registrar/sorteio', [SorteioController::class, 'create'])->name('registrar.sorteio');
+    Route::get('logado', function () {
+        return auth()->user()->id;
+    });
+    Route::post('/upload', [SorteioController::class, 'upload'])->name('upload');
 });

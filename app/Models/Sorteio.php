@@ -9,6 +9,11 @@ class Sorteio extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'titulo',
+        'descricao',
+    ];
+
     public function usuario()
     {
         return $this->belongsToMany(User::class, 'sorteio_users', 'sorteio_id', 'user_id');
